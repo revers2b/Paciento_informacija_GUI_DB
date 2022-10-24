@@ -55,8 +55,10 @@ bukle_po_vaistu_geriau = Checkbutton(window, text="Geriau", font="helvetica 12")
 bukle_po_vaistu_nepakito = Checkbutton(window, text="Nepakito", font="helvetica 12")
 bukle_po_vaistu_blogiau = Checkbutton(window, text="Blogiau", font="helvetica 12")
 
-
-
+# (5) Buttons
+saugoti_irasymus = Button(window, text="Išsaugoti įrašymus", height=2, width=15, font="helvetica 15")
+isvalyti_irasymus = Button(window, text="Išvalyti įrašymus", height=2, width=15, font="helvetica 15")
+pacientu_sarasas = Button(window, text="pacientu sarasas", height=2, width=15, font="helvetica 15")
 
 # (1) grid
 pacientas_lab.grid(row=0, column=1)
@@ -96,17 +98,20 @@ atvykimo_priezastis.grid(row=16, column=1, columnspan=2)
 
 # (4) grid
 vaistai_pazymejimas_lab.grid(row=17, column=0)
-vaistai_laikas_lab.grid(row=18, column=0)
-vaistai_laikas.grid(row=18, column=1)
-vaistai_lab.grid(row=18, column=2)
-vaistai.grid(row=18, column=3)
-vaistai_kiekis_lab.grid(row=18, column=4)
-vaistai_kiekis.grid(row=18, column=5)
+vaistai_laikas_lab.grid(row=18, column=0, sticky="e")
+vaistai_laikas.grid(row=18, column=1, sticky="w")
+vaistai_lab.grid(row=18, column=2, sticky="e")
+vaistai.grid(row=18, column=3, sticky="w")
+vaistai_kiekis_lab.grid(row=18, column=4, sticky="e")
+vaistai_kiekis.grid(row=18, column=5, sticky="w")
 bukle_po_vaistu_geriau.grid(row=18, column=6)
 bukle_po_vaistu_nepakito.grid(row=18, column=7)
 bukle_po_vaistu_blogiau.grid(row=18, column=8)
 
-
+#(5) grid
+saugoti_irasymus.grid(row=1, column=3)
+pacientu_sarasas.grid(row=2, column=3)
+isvalyti_irasymus.grid(row=3, column=3)
 
 def close():
     window.destroy()
