@@ -3,10 +3,7 @@ from tkinter import *
 window = Tk()
 window.title("Paciento informacija")
 
-
 # "({skaicius})" priklauso kodo gabalui kurie kartu siejasi
-
-
 # (1) paciento informacija
 pacientas_lab = Label(window, text="-Paciento informacija-", borderwidth=15, font="helvetica 15 bold")
 vardas_lab = Label(window, text="Vardas:", anchor="e", font="helvetica 12")
@@ -22,16 +19,22 @@ atvykimo_data = Entry(window, width=50, font="helvetica 12")
 
 # (2) paciento bukle
 bukle = Label(window, text="-Bukle-", borderwidth=15, font="helvetica 15 bold")
+
+# ------ A,B (kvepavimo takai, kvepavimas)
 spo2_lab = Label(window, text="SpO2:", font="helvetica 12")
 spo2 = Entry(window, width=2, font="helvetica 12")
 kd_lab = Label(window, text="KD:", anchor="e", font="helvetica 12")
 kd = Entry(window, width=2, font="helvetica 12")
+
+# ------ C (kraujotaka)
 aks_lab = Label(window, text="AKS:", anchor="e", font="helvetica 12")
 aks = Entry(window, width=7, font="helvetica 12")
 pulsas_lab = Label(window, text="ŠSD:", anchor="e", font="helvetica 12")
 pulsas = Entry(window, width=3, font="helvetica 12")
 ekg_lab = Label(window, text="EKG:", anchor="e", font="helvetica 12")
 ekg = Entry(window, width=40, font="helvetica 12")
+
+# ------ D (neurologija)
 gks_lab = Label(window, text="GKS:", anchor="e", font="helvetica 12")
 gks = Entry(window, width=2, font="helvetica 12")
 gliukoze_lab = Label(window, text="Gliukoze:", anchor="e", font="helvetica 12")
