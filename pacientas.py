@@ -5,7 +5,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 while True:
-    pasirinkimas = int(input("Įvesti pacienta - 1 \nĮvesti kvepavima - 2 \nĮvesti kraujavima - 3 \nĮvesti neurologija - 4 \nĮvesti ligoninė - 5 \nPeržiūrėti paciento duomenys - 7 \nIšeit - 0:"))
+    pasirinkimas = int(input("Įvesti pacienta - 1 \nĮvesti kvepavima - 2 \nĮvesti kraujavima - 3 \nĮvesti neurologija - 4 \nĮvesti ligoninė - 5 \nPeržiūrėti paciento sarašą - 6 \nPeržiūrėti viska - 7 \nIšeit - 0 \n:"))
     if pasirinkimas == 1:
         vardas = input("Įveskite varda: ")
         pavarde = input("Įveskite pavardė: ")
@@ -45,9 +45,13 @@ while True:
         session.add(ligonines)
         session.commit()
 
-    if pasirinkimas == 7:
-        kvepuota = session.query(Kvepavimas).all()
+    if pasirinkimas == 6:
         zmogus = session.query(Pacientas).all()
+        for zmones in zmogus:
+            print(zmones)
+    if pasirinkimas == 7:
+        zmogus = session.query(Pacientas).all()
+        kvepuota = session.query(Kvepavimas).all()
         kraujas = session.query(Kraujotaka).all()
         neuros = session.query(Neurologija).all()
         ligonin = session.query(Ligonine).all()
