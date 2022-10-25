@@ -7,30 +7,11 @@ window = Tk()
 window.title("Paciento informacija")
 session = sessionmaker(bind=engine)()
 
+
 def saugoti():
-    pacientas = Pacientas(
-        vardas=vardas,
-        pavarde=pavarde,
-        amzius=amzius,
-        asmens_kodas=asmens_kodas,
-    )
+    pacientas = Pacientas(vardas=vardas, pavarde=pavarde, asmens_kodas=asmens_kodas,)
     session.add(pacientas)
     session.commit()
-
-def isvalymas():
-    vardas.delete(0, 'end')
-    pavarde.delete(0, 'end')
-    amzius.delete(0, 'end')
-    asmens_kodas.delete(0, 'end')
-    spo2.delete(0, 'end')
-    kd.delete(0, 'end')
-    aks.delete(0, 'end')
-    pulsas.delete(0, 'end')
-    ekg.delete(0, 'end')
-    gks.delete(0, 'end')
-    gliukoze.delete(0, 'end')
-    temp.delete(0, 'end')
-
 
 def saugoti1():
     kvep = Kvepavimas(
@@ -57,6 +38,18 @@ def saugoti3():
     session.add(neur)
     session.commit()
 
+def isvalymas():
+    vardas.delete(0, 'end')
+    pavarde.delete(0, 'end')
+    asmens_kodas.delete(0, 'end')
+    spo2.delete(0, 'end')
+    kd.delete(0, 'end')
+    aks.delete(0, 'end')
+    pulsas.delete(0, 'end')
+    ekg.delete(0, 'end')
+    gks.delete(0, 'end')
+    gliukoze.delete(0, 'end')
+    temp.delete(0, 'end')
 
 # "({skaicius})" priklauso kodo gabalui kurie kartu siejasi
 # (1) paciento informacija
@@ -65,8 +58,8 @@ vardas_lab = Label(window, text="Vardas:", anchor="e", font="helvetica 12")
 vardas = Entry(window, width=50, font="helvetica 12")
 pavarde_lab = Label(window, text="Pavarde:", anchor="e", font="helvetica 12")
 pavarde = Entry(window, width=50, font="helvetica 12")
-amzius_lab = Label(window, text="Amzius:", anchor="e", font="helvetica 12")
-amzius = Entry(window, width=50, font="helvetica 12")
+# amzius_lab = Label(window, text="Amzius:", anchor="e", font="helvetica 12")
+# amzius = Entry(window, width=50, font="helvetica 12")
 asmens_kodas_lab = Label(window, text="Asmens kodas:", anchor="e", font="helvetica 12")
 asmens_kodas = Entry(window, width=50, font="helvetica 12")
 
@@ -127,8 +120,8 @@ vardas_lab.grid(row=1, column=0, sticky="e")
 vardas.grid(row=1, column=1)
 pavarde_lab.grid(row=2, column=0, sticky="e")
 pavarde.grid(row=2, column=1)
-amzius_lab.grid(row=3, column=0, sticky="e")
-amzius.grid(row=3, column=1)
+# amzius_lab.grid(row=3, column=0, sticky="e")
+# amzius.grid(row=3, column=1)
 asmens_kodas_lab.grid(row=4, column=0, sticky="e")
 asmens_kodas.grid(row=4, column=1)
 
